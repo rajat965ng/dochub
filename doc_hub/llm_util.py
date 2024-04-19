@@ -1,4 +1,4 @@
-from backend.backend.query_utils import query
+from frontend.frontend.query_utils import query
 
 
 def main():

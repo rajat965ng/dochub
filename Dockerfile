@@ -10,10 +10,10 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 COPY . .
-RUN pip3 install poetry
-RUN poetry config virtualenvs.create false
-RUN poetry install --no-dev
+
+RUN pip3 install -r requirements.txt
 
 EXPOSE 8501
 
-ENTRYPOINT ["poetry", "run", "streamlit", "run", "frontend/frontend/app.py"]
+
+ENTRYPOINT ["streamlit", "run", "frontend/frontend/app.py", "--server.port=8501", "--server.address=0.0.0.0"]

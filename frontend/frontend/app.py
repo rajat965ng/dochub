@@ -2,8 +2,7 @@ import os
 
 import streamlit as st
 
-from backend.backend.query_utils import query
-
+from query_utils import query
 st.title(os.getenv("APP_TITLE"))
 
 # Initialize chat history
